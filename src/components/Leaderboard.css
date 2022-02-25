@@ -1,0 +1,63 @@
+.leaderboard-wrapper {
+  font-size: clamp(1rem, 1vw, 1.25rem);
+  padding-top: 1.5vw;
+}
+
+.leaderboard-wrapper ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0.2vw;
+}
+
+.leaderboard-wrapper li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  counter-increment: leaderboard;
+  position: relative;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+  transition: all 500ms ease-in-out;
+}
+
+.leaderboard-wrapper li:first-child {
+  counter-set: leaderboard 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.leaderboard-wrapper li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-wrapper li:first-child::before {
+  content: "";
+}
+
+.leaderboard-wrapper li:before {
+  content: counter(leaderboard);
+  position: absolute;
+  top: 0.25rem;
+  left: 1rem;
+}
+
+.minute,
+.second {
+  font-size: 0.75vw;
+}
+
+.time-score {
+  display: flex;
+}
+
+.second-wrapper {
+  margin-left: 0.25rem;
+}
+
+.leaderboard-wrapper li.new-score {
+  background-color: rgba(0, 255, 0, 0.25);
+}

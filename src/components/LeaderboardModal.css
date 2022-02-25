@@ -1,0 +1,49 @@
+.leaderboard-modal-content h1 {
+  font-style: normal;
+  margin: 1rem 2rem;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.leaderboard-modal {
+  z-index: 1;
+}
+
+.leaderboard-modal-content {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-leaderboard-button {
+  margin-top: 1.5rem;
+  align-self: center;
+}
+
+.fade-move-up {
+  animation: fadeMoveUp 500ms ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOut 500ms ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeMoveUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+}

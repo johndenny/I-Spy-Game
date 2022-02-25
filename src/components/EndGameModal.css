@@ -1,0 +1,147 @@
+.end-game-modal,
+.leaderboard-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 500ms ease-in-out;
+}
+
+.modal-content h1 {
+  font-size: clamp(3rem, 4.5vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.modal-content,
+.leaderboard-modal-content {
+  padding: 2rem;
+  padding-top: 1rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  animation: fadeDropIn 500ms ease-in-out;
+  max-width: 700px;
+}
+
+@keyframes fadeDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.score-wrapper {
+  padding-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 1.75vw, 2rem);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.leaderboard-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboard-label > span {
+  margin-left: 1rem;
+  margin-bottom: 0.1rem;
+  letter-spacing: 1px;
+}
+
+.form-inputs-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leaderboard-form {
+  overflow: hidden;
+  max-height: 120px;
+}
+
+@keyframes slideOver {
+  from {
+    max-height: 120px;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+.slideOver {
+  animation: slideOver 300ms linear;
+}
+
+form h2,
+.not-highscore {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+}
+
+.submit-button,
+.return-button {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  letter-spacing: 1px;
+  color: rgb(100, 0, 0);
+  align-self: flex-end;
+  padding: 0.5rem 2rem;
+  padding-top: 0.25rem;
+  background-image: linear-gradient(rgb(255, 95, 95), rgb(255, 44, 44));
+  border: 1px solid rgb(187, 0, 0);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.return-button {
+  background-image: linear-gradient(rgb(0, 219, 0), rgb(0, 184, 0));
+  color: rgb(0, 75, 0);
+  border: 1px solid rgb(0, 120, 0);
+  text-decoration: none;
+}
+
+.submit-button:active {
+  background-image: linear-gradient(rgb(255, 44, 44), rgb(255, 95, 95));
+}
+
+.return-button:active {
+  background-image: linear-gradient(rgb(0, 184, 0), rgb(0, 219, 0));
+}
+
+.return-button-wrapper {
+  padding-top: 1.5vw;
+  display: flex;
+  justify-content: center;
+}
+
+.leaderboard-name-input {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 1vw, 1.25rem);
+  padding: 0.5rem 1.25rem;
+  padding-top: 0.25rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  outline: none;
+}

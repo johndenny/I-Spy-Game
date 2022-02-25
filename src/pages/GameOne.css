@@ -1,0 +1,154 @@
+.main-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fadeIn 500ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-image-wrapper {
+  margin-top: 2vw;
+  height: auto;
+  width: 70%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.main-image-wrapper img {
+  width: 100%;
+}
+
+.image-wrapper {
+  height: auto;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.footer-text-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1.5vw;
+}
+
+.left-text,
+.right-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 3vw;
+  gap: 0.5vw;
+}
+
+.checkmark,
+.xMark {
+  position: absolute;
+  /* background-image: linear-gradient(rgb(101, 192, 101), rgb(0, 182, 0)); */
+  border-radius: 100%;
+  transform: translateY(-50%) translateX(-50%);
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  width: 3vw;
+  height: auto;
+}
+
+.checkmark svg,
+.xMark svg {
+  background-image: linear-gradient(rgb(101, 192, 101), rgb(0, 182, 0));
+  border: 1px solid rgb(59, 161, 59);
+  border-bottom-color: rgb(55, 151, 55);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+  display: block;
+  color: white;
+  width: 70%;
+  padding: 0.25vw;
+  height: 70%;
+  border-radius: 100%;
+}
+
+.xMark svg {
+  background-image: linear-gradient(rgb(221, 80, 80), rgb(182, 0, 0));
+  border: 1px solid rgb(185, 48, 48);
+  transform: translateY(-0%) translateX(-0%);
+  animation: shake 100ms ease-in-out;
+  animation-iteration-count: 3;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.checkmark.hidden,
+.xMark.hidden {
+  display: none;
+}
+
+span.found {
+  color: rgb(0, 177, 0);
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 2;
+}
+
+.loader-wrapper svg {
+  width: 42px;
+  height: 42px;
+  animation: spin 1500ms linear;
+  animation-iteration-count: infinite;
+}
+
+.fade-out {
+  animation: fadeOut 300ms linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
